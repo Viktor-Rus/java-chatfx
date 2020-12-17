@@ -52,7 +52,7 @@ public class Controller implements Initializable {
     private Stage regStage;
     private RegController regController;
 
-    private String login;
+
 
     public void setAuthenticated(boolean authenticated) {
         this.authenticated = authenticated;
@@ -64,7 +64,7 @@ public class Controller implements Initializable {
         clientList.setVisible(authenticated);
         if (!authenticated) {
             nickname = "";
-            History.stop();
+
         }
         setTitle(nickname);
         textArea.clear();
@@ -114,8 +114,7 @@ public class Controller implements Initializable {
                                 nickname = str.split("\\s")[1];
                                 setAuthenticated(true);
 
-                                textArea.appendText(History.getLast100LineOfHistory(login));
-                                History.start(login);
+
                                 break;
                             }
 
@@ -152,7 +151,7 @@ public class Controller implements Initializable {
                             //==============//
                         } else {
                             textArea.appendText(str + "\n");
-                            History.writeLine(str);
+
                         }
                     }
                 } catch (RuntimeException e) {
